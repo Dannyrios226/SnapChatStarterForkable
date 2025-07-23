@@ -25,6 +25,12 @@ export default function ConversationScreen({ route, navigation }) {
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
+    setMessages([      {
+        _id: 1,
+        text: "Woof, I am Baker's Chatbot! Say 'Yes' to play dog trivia!",
+        createdAt: new Date(),
+        user: CHATBOT_USER_OBJ,
+      },])
     fetchConversations();
     if (user !== null) {
       setLoading(false);
@@ -60,7 +66,7 @@ export default function ConversationScreen({ route, navigation }) {
     console.log("Change received!", JSON.stringify(payload, null, 4));
     addNewMessage(payload.new.messages[0]);
   };
-  // Listen to inserts
+ // Listen to inserts
   supabase
     .channel("conversations")
     .on(
@@ -69,6 +75,14 @@ export default function ConversationScreen({ route, navigation }) {
       handleInserts,
     )
     .subscribe();
+
+    async function fetchConversations() {
+      //set conversations to data
+      // set messages to data at 0 .messages
+      //add new messages
+
+    }
+
 
   const addNewMessage = (newMessages) => {
     setMessages((previousMessages) => {
