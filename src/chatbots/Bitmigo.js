@@ -15,11 +15,11 @@ const prompt = [
 
 const CHATBOT_USER_OBJ = {
   _id: 2,
-  name: "Bitmoji Amigo",
-  avatar: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi3YUmhD5pqQbKIyfmGm-u6V2tStAk3p05WTVSO8SUzKzoqnC6stmATUDMOjMQUPNqgmQ&usqp=CAU",
+  name: "Bitmigo",
+  avatar: "https://sdk.bitmoji.com/render/panel/e54c85a4-db60-4b1d-89a4-a45c34183169-76202831-4e55-46db-a7c7-ed6034462ae2-v1.png?transparent=1&palette=1",
 };
 
-export default function BitmojiAmigo() {
+export default function Bitmigo() {
 
 const route = useRoute();
 const { chatId, isChatbot } = route.params || {};
