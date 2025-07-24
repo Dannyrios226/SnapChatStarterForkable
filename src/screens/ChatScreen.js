@@ -74,7 +74,7 @@ export default function ChatScreen({ navigation }) {
               style={styles.userButton}
               onPress={() => {
                 console.log("Chat object:", chat);
-               navigation.navigate("TestChatBot", {
+               navigation.navigate("BitmojiAmigo", {
                  isChatbot: chat.isChatbot,
                  chatId: chat.chatId,
                });

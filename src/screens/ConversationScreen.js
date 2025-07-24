@@ -5,7 +5,7 @@ import BasicChatbot from "../chatbots/BasicChatbot";
 import { supabase } from "../utils/hooks/supabase";
 import { GiftedChat } from "react-native-gifted-chat";
 import { useAuthentication } from "../utils/hooks/useAuthentication";
-import TestChatBot from "../chatbots/TestChatBot";
+import BitmojiAmigo from "../chatbots/BitmojiAmigo";
 const CHATBOT_USER_OBJ = {
   // user you are trying to send a message to
   _id: 1,
@@ -13,10 +13,10 @@ const CHATBOT_USER_OBJ = {
   avatar: "",
 };
 export const CHATBOTS = {
-  TestChatBot: {
-    name: "TestChatBot",
+  BitmojiAmigo: {
+    name: "BitmojiAmigo",
     imageUrl: "https://jakemiller.net/wp-content/uploads/2018/10/cropped-Modified-Bitmoji.png",
-    component: TestChatBot,
+    component: BitmojiAmigo,
   },
 };
 export default function ConversationScreen({ route, navigation }) {
