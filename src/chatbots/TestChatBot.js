@@ -2,8 +2,8 @@ import React, { useState, useCallback, useEffect } from "react";
 import { GiftedChat } from "react-native-gifted-chat";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, SafeAreaView, Platform } from "react-native";
-import { getChat } from "../utils/getChatGPT";
-
+import { getChat } from "../../utils/TestGetChatGPT";
+import {useRoute} from "@react-navigation/native";
 
 const prompt = [
   {
@@ -15,11 +15,19 @@ const prompt = [
 
 const CHATBOT_USER_OBJ = {
   _id: 2,
-  name: "Mine_Swipe",
+  name: "Bitmoji Friend",
   avatar: "https://static.vecteezy.com/system/resources/previews/060/512/971/non_2x/retro-pixel-art-bomb-icon-with-lit-fuse-classic-game-style-vector.jpg",
 };
 
-export default function BasicChatbot() {
+export default function TestChatBot() {
+
+const route = useRoute();
+const { chatId, isChatbot } = route.params || {};
+if (!chatId) {
+  return <Text>TEST CHAT BOT: No Chatbot Found with name '{chatId}'</Text>;
+}
+
+
   const [messages, setMessages] = useState([]);
 
  async function fetchInitialMessage() {

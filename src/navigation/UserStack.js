@@ -2,6 +2,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import UserTab from "./UserTab";
 import ConversationScreen from "../screens/ConversationScreen";
+import TestChatBot from "../chatbots/TestChatBot";
 import ProfileScreen from "../screens/ProfileScreen";
 import AddFriendScreen from "../screens/AddFriendScreen";
 import DiscoverCard from "../components/DiscoverCard";
@@ -35,8 +36,8 @@ export default function App() {
           options={{ headerShown: true }}
         />
         <Stack.Screen
-          name="Conversation"
-          component={ConversationScreen}
+          name="TestChatBot"
+          component={TestChatBot}
           options={{ headerShown: true }}
         />
         <Stack.Screen

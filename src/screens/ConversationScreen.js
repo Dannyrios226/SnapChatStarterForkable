@@ -5,6 +5,7 @@ import BasicChatbot from "../chatbots/BasicChatbot";
 import { supabase } from "../utils/hooks/supabase";
 import { GiftedChat } from "react-native-gifted-chat";
 import { useAuthentication } from "../utils/hooks/useAuthentication";
+import TestChatBot from "../chatbots/TestChatBot";
 const CHATBOT_USER_OBJ = {
   // user you are trying to send a message to
   _id: 1,
@@ -12,10 +13,10 @@ const CHATBOT_USER_OBJ = {
   avatar: "",
 };
 export const CHATBOTS = {
-  BasicChatbot: {
-    name: "React Native Chatbot",
-    imageUrl: "https://loremflickr.com/140/140",
-    component: BasicChatbot,
+  TestChatBot: {
+    name: "TestChatBot",
+    imageUrl: "https://jakemiller.net/wp-content/uploads/2018/10/cropped-Modified-Bitmoji.png",
+    component: TestChatBot,
   },
 };
 export default function ConversationScreen({ route, navigation }) {
@@ -43,7 +44,7 @@ export default function ConversationScreen({ route, navigation }) {
       const Chatbot = CHATBOTS[chatbotName].component;
       return <Chatbot />;
     } else {
-      return <Text>No Chatbot Found with name '{chatbotName}'</Text>;
+      return <Text> CONVERSATIONS-SCREEN No Chatbot Found with name '{chatbotName}'</Text>;
     }
   };
   async function fetchConversations() {

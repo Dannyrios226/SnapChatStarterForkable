@@ -12,7 +12,7 @@ const SelectionMenu = ({ showMenu, setShowMenu }) => {
     {
       title: "New Chat",
       onPress: () => {
-        navigation.navigate("Conversation");
+        navigation.navigate("TestChatScreen");
         setShowMenu(false);
 
       },
